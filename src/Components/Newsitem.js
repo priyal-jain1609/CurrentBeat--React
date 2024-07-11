@@ -1,28 +1,40 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-export class Newsitem extends Component {
-  
+export class NewsItem extends Component {
   render() {
-    let {title, description, imageUrl,newsUrl,author,date,source}=this.props;
-    if (!title) {
-      return null;
-    }
+    let {
+      title,
+      description,
+      imageURL,
+      newsURL,
+    
+      author,
+      date,
+      source,
+    } = this.props;
+
     return (
       <div>
-        <div className="card" >
-        <span className="position-absolute top-0 translate-middle badge rounded-pill bg-secondary" style={{left: '50%', zIndex:1}}>
-        {source}</span>
-  <img src={!imageUrl?"https://media.zenfs.com/en/bloomberg_markets_842/d815c3413122a894dcfc3cd3fba165f5":imageUrl} className="card-img-top" alt="..."/>
-  <div className="card-body">
+        <div className="card">
+          <span className="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark">
+            {source}
+          </span>
+          <img
+            src={imageURL}
+            className="card-img-top"
+            alt="..."
+            style={{ height: "200px" }}
+          />
+          <div className="card-body">
     <h5 className="card-title">{title}...</h5>
     <p className="card-text">{description}...</p>
     <p className="card-text"> <small className="text-muted">By {!author?"Unknown":author} on {new Date(date).toGMTString()}.</small></p>
-    <a rel="noreferrer" href={newsUrl} target="_blank" className="btn btn-link">Read More</a>
+    <a rel="noreferrer" href={newsURL} target="_blank" className="btn btn-link">Read More</a>
   </div>
-</div>
+        </div>
       </div>
-    )
+    );
   }
 }
 
-export default Newsitem
+export default NewsItem;
