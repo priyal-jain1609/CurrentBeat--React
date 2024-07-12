@@ -35,7 +35,7 @@ export class News extends Component {
       this.state.keyword ? this.state.keyword : ""
     }&country=${this.props.country}&category=${
       this.props.category
-    }&apiKey=937e2dc7aaa94060b31385c4bb8311df&page=${
+    }&apiKey=${this.props.apiKey}&page=${
       this.state.page
     }&pageSize=${this.state.pageSize}`;
     this.setState({ loading: true });
@@ -47,7 +47,7 @@ export class News extends Component {
       totalResults: parseData.totalResults,
     });
   }
-
+  // 937e2dc7aaa94060b31385c4bb8311df
   async componentDidMount() {
   
     this.updateNews();
@@ -82,7 +82,7 @@ export class News extends Component {
       this.state.keyword ? this.state.keyword : ""
     }&country=${this.props.country}&category=${
       this.props.category
-    }&apiKey=937e2dc7aaa94060b31385c4bb8311df&page=${
+}&apiKey=${this.props.apiKey}&page=${
       this.state.page
     }&pageSize=${this.state.pageSize}`;
     this.setState({ loading: true });

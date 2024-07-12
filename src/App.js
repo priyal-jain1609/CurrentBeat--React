@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 export default class App extends Component {
   state = {};
   pageSize = 8;
+  apiKey=process.env.REACT_APP_NEWS_API
   render() {
     return (
       <div>
@@ -23,7 +24,7 @@ export default class App extends Component {
               exact
               path="/general"
               element={
-                <News
+                <News  apiKey={this.apiKey}
                   key="general"
                   pageSize={this.pageSize}
                   country="in"
@@ -35,7 +36,7 @@ export default class App extends Component {
               exact
               path="/business"
               element={
-                <News
+                <News  apiKey={this.apiKey}
                   key="business"
                   pageSize={this.pageSize}
                   country="in"
@@ -48,7 +49,7 @@ export default class App extends Component {
               exact
               path="/entertainment"
               element={
-                <News
+                <News  apiKey={this.apiKey}
                   key="entertainment"
                   pageSize={this.pageSize}
                   country="in"
@@ -61,7 +62,7 @@ export default class App extends Component {
               exact
               path="/health"
               element={
-                <News
+                <News  apiKey={this.apiKey}
                   key="health"
                   pageSize={this.pageSize}
                   country="in"
@@ -74,7 +75,7 @@ export default class App extends Component {
               exact
               path="/science"
               element={
-                <News
+                <News  apiKey={this.apiKey}
                   key="science"
                   pageSize={this.pageSize}
                   country="in"
@@ -87,7 +88,7 @@ export default class App extends Component {
               exact
               path="/sports"
               element={
-                <News
+                <News  apiKey={this.apiKey}
                   key="sports"
                   pageSize={this.pageSize}
                   country="in"
@@ -100,7 +101,7 @@ export default class App extends Component {
               exact
               path="/technology"
               element={
-                <News
+                <News  apiKey={this.apiKey}
                   key="technology"
                   pageSize={this.pageSize}
                   country="in"
